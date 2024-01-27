@@ -16,6 +16,7 @@ export default function FormSearchCity({
 
   const handlerNameCity = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setNameCity(ev.target.value);
+    setErrorCity(null);
   };
 
   const handleSearch = async (ev: React.FormEvent) => {

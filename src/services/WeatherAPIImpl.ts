@@ -20,13 +20,17 @@ export class WeatherAPIImpl implements IWeatherAPI {
   }
 
   async findCityByName(nameCity = ''): Promise<City> {
-    const params = new URLSearchParams();
     if (this.WEATHER_API_KEY !== null) {
-      params.append('key', this.WEATHER_API_KEY);
+      throw new Error('API KEY is invalid!');
     }
+
     if (nameCity !== null) {
-      params.append('q', nameCity);
+      throw new Error('Name city is invalid!');
     }
+
+    const params = new URLSearchParams();
+    params.append('key', this.WEATHER_API_KEY);
+    params.append('q', nameCity);
 
     const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.search}`,
