@@ -4,7 +4,7 @@ import './HomePage.scss';
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="home">
       <IconWeather />
       <h1 className="home__title">Weather App</h1>
       <CardFormSearchCity />
