@@ -20,7 +20,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
   }
 
   async findCityByName(nameCity = ''): Promise<City> {
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     if (this.WEATHER_API_KEY !== null) {
       params.append('key', this.WEATHER_API_KEY);
     }
@@ -28,7 +28,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
       params.append('q', nameCity);
     }
 
-    let fullUrl = new URL(
+    const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.search}`,
     );
     fullUrl.search = new URLSearchParams(params).toString();
@@ -41,7 +41,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
   async findCurrentForecastByCity(query: QueryCity): Promise<CurrentForecast> {
     const { nameCity, hasAirQuality } = query;
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     if (this.WEATHER_API_KEY !== null) {
       params.append('key', this.WEATHER_API_KEY);
     }
@@ -52,7 +52,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
       params.append('aqi', hasAirQuality);
     }
 
-    let fullUrl = new URL(
+    const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.CurrentForecast}`,
     );
     fullUrl.search = new URLSearchParams(params).toString();
@@ -65,7 +65,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
   async findWeatherDetailsByCity(query: QueryCity): Promise<Weather> {
     const { nameCity, hasAirQuality, hasAlerts, days } = query;
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
     if (this.WEATHER_API_KEY !== null) {
       params.append('key', this.WEATHER_API_KEY);
     }
@@ -82,7 +82,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
       params.append('days', days.toString());
     }
 
-    let fullUrl = new URL(
+    const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.forecast}`,
     );
     fullUrl.search = new URLSearchParams(params).toString();
