@@ -40,16 +40,16 @@ export default function FormSearchCity({
   };
 
   return (
-    <form onSubmit={handleSearch} className="form">
-      <div className="form__formfield">
-        <label htmlFor="nameCity" className="form__label">
+    <form onSubmit={handleSearch} className="form-search-city">
+      <div className="form-search-city__formfield">
+        <label htmlFor="nameCity" className="form-search-city__label">
           City:
         </label>
         <input
           type="search"
           id="nameCity"
           name="nameCity"
-          className="form__input"
+          className="form-search-city__input"
           value={nameCity}
           onChange={handlerNameCity}
           placeholder="Enter some city"
@@ -57,7 +57,7 @@ export default function FormSearchCity({
           autoComplete="off"
         />
       </div>
-      <button type="submit" className="form__button">
+      <button type="submit" className="form-search-city__button">
         Search
       </button>
     </form>

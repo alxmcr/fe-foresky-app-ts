@@ -1,6 +1,7 @@
 import React from 'react';
 import FormSearchCity from '../../forms/FormSearchCity';
 import { LoadingStates } from '../../../@types/appTypes';
+import './CardFormSearchCity.scss';
 
 export default function CardFormSearchCity() {
   const [statusSearch, setStatusSearch] = React.useState(LoadingStates.IDLE);

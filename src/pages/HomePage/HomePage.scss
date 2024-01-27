@@ -8,3 +8,9 @@
   min-height: 100vh;
   width: 320px;
 }
+
+@media (width > 320px) {
+  .home {
+    width: 450px;
+  }
+}
