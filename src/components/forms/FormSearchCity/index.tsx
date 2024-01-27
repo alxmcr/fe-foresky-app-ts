@@ -2,6 +2,7 @@ import React from 'react';
 import { WeatherAPIImpl } from '../../../services/WeatherAPIImpl';
 import { LoadingStates } from '../../../@types/appTypes';
 import './FormSearchCity.scss';
+import { CityContext } from '../../../providers/CityContext';
 
 type FormSearchCityProps = {
   setErrorCity: React.Dispatch<React.SetStateAction<Error | null>>;
@@ -12,7 +13,7 @@ export default function FormSearchCity({
   setErrorCity,
   setStatusSearch,
 }: FormSearchCityProps) {
-  const [nameCity, setNameCity] = React.useState('');
+  const { nameCity, setNameCity } = React.useContext(CityContext);
 
   const handlerNameCity = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setNameCity(ev.target.value);
