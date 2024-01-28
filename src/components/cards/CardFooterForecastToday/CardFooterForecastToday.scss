@@ -1,20 +1,29 @@
 .card-footer-forecast-today {
-  background-color: black;
+  background-color: #000;
   border-radius: 0.5rem;
   color: #fff;
+  padding: 0.5rem;
+
   align-items: center;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   gap: 0.2rem;
-  padding: 0.5rem 0;
+  height: 5rem;
+
+  &__nature-event {
+    margin: 0;
+    text-align: center;
+  }
 
   &__nature-info {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
-    width: 4.875rem;
+    gap: 1rem;
+
+    width: 32%;
   }
 }

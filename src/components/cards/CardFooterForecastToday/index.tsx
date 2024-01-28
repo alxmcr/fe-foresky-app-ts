@@ -18,25 +18,19 @@ export default function CardFooterForecastToday({
   return (
     <footer className="card-footer-forecast-today">
       <div className="card-footer-forecast-today__nature-info">
-        <i className="card-footer-forecast-today__icon">
-          <IconWind />
-        </i>
+        <IconWind />
         <p className="card-footer-forecast-today__nature-event">
           {currentForecast.current.wind_kph} Km/h
         </p>
       </div>
       <div className="card-footer-forecast-today__nature-info">
-        <i className="card-footer-forecast-today__icon">
-          <IconDropWater />
-        </i>
+        <IconDropWater />
         <p className="card-footer-forecast-today__nature-event">
           {currentForecast.current.humidity}%
         </p>
       </div>
       <div className="card-footer-forecast-today__nature-info">
-        <i className="card-footer-forecast-today__icon">
-          <IconCloud />
-        </i>
+        <IconCloud />
         <p className="card-footer-forecast-today__nature-event">
           {currentForecast.current.cloud}%
         </p>
