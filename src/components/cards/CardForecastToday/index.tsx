@@ -1,30 +1,7 @@
 import React from 'react';
-import { basicFormatDateStr } from '../../../helpers/dateHelpers';
 import useCurrentForecast from '../../../hooks/useCurrentForecast';
-import IconMapPin from '../../icons/IconMapPin';
 import { CityContext } from '../../../providers/CityContext';
-
-type HeaderForecastTodayProps = {
-  locationName: string;
-  lastUpdatedAt: string;
-};
-
-function HeaderForecastToday({
-  locationName = '_',
-  lastUpdatedAt = '2024-01-26 16:15',
-}: HeaderForecastTodayProps) {
-  return (
-    <header className="forecast-today">
-      <div className="forecast-today__location">
-        <IconMapPin />
-        <h3 className="forecast-today__location-details">{locationName}</h3>
-      </div>
-      <p className="forecast-today__lastupdated">
-        {basicFormatDateStr(lastUpdatedAt, 'en-US')}
-      </p>
-    </header>
-  );
-}
+import CardHeaderForecastToday from '../CardHeaderForecastToday';
 
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
@@ -32,7 +9,7 @@ export default function CardForecastToday() {
 
   return (
     <article className="card-forecast-today">
-      <HeaderForecastToday
+      <CardHeaderForecastToday
         locationName={currentForecast?.location.name || ''}
         lastUpdatedAt={currentForecast?.current.last_updated || ''}
       />
