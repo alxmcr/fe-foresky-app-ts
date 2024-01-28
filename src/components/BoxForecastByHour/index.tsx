@@ -6,6 +6,7 @@ type BoxForecastByHourProps = {
 };
 
 export default function BoxForecastByHour({ hour }: BoxForecastByHourProps) {
+  console.log("🚀 ~ BoxForecastByHour ~ hour:", hour)
   if (hour === null) {
     return null;
   }
