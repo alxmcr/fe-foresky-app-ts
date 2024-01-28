@@ -10,23 +10,23 @@ export default function SectionGroupForecastByHour() {
 
   if (loading === LoadingStates.PENDING) {
     return (
-      <section className="section-group-forecasts">
-        <p className="section-group-forecasts__message">Loading forecasts...</p>
+      <section className="section-group-forecasts-by-day">
+        <p className="section-group-forecasts-by-day__message">Loading forecasts...</p>
       </section>
     );
   }
 
   if (loading === LoadingStates.ERROR) {
     return (
-      <section className="section-group-forecasts">
-        <p className="section-group-forecasts__message">{error?.message}</p>
+      <section className="section-group-forecasts-by-day">
+        <p className="section-group-forecasts-by-day__message">{error?.message}</p>
       </section>
     );
   }
 
   return (
-    <section className="section-group-forecasts">
-      <h2 className="section-group-forecasts__title">Next Hours</h2>
+    <section className="section-group-forecasts-by-day">
+      <h2 className="section-group-forecasts-by-day__title">Next Hours</h2>
       <GroupForecastByHour weather={weather} />
     </section>
   );
