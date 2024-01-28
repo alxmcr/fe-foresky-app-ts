@@ -1,4 +1,5 @@
 import { CurrentForecast } from '../../../@types/typeForecasts';
+import './CardBodyForecastToday.scss';
 
 type CardBodyForecastTodayProps = {
   currentForecast: CurrentForecast | null;
@@ -12,17 +13,17 @@ export default function CardBodyForecastToday({
   }
 
   return (
-    <div className="card-forecast-today__body">
+    <div className="card-body-forecast-today">
       <img
         src={currentForecast?.current.condition.icon}
         alt={currentForecast?.current.condition.text}
-        className="card-forecast-today__image"
+        className="card-body-forecast-today__image"
       />
-      <div className="card-forecast-today__condition">
-        <p className="card-forecast-today__temperature">
+      <div className="card-body-forecast-today__condition">
+        <p className="card-body-forecast-today__temperature">
           {currentForecast?.current.temp_c} °C
         </p>
-        <p className="card-forecast-today__name">
+        <p className="card-body-forecast-today__name">
           {currentForecast?.current.condition.text}
         </p>
       </div>

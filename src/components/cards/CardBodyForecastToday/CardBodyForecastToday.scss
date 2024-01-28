@@ -1,0 +1,19 @@
+.card-body-forecast-today {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  margin-top: 1.5rem;
+
+  &__name {
+    text-align: center;
+    margin: 0;
+  }
+
+  &__temperature {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}

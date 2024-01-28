@@ -1,13 +1,12 @@
 .card-forecast-today {
   background-color: #fff;
   border-radius: 0.5rem;
+  
   padding: 0.5rem;
-  padding: 10px;
-
   width: 100%;
 }
 
-@media (width > 320px) {
+@media (width > 400px) {
   .card-forecast-today {
     width: 430px;
   }
