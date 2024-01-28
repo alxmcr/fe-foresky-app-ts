@@ -6,12 +6,20 @@ import GroupForecastByHour from '../GroupForecastByHour';
 
 export default function BoxGroupForecastByHour() {
   const { nameCity } = React.useContext(CityContext);
-  const { weather, loading } = useWeather(nameCity);
+  const { weather, loading, error } = useWeather(nameCity);
 
   if (loading === LoadingStates.PENDING) {
     return (
       <div className="box-group-forecasts">
         <p className="box-group-forecasts__message">Loading forecasts...</p>
+      </div>
+    );
+  }
+
+  if (loading === LoadingStates.ERROR) {
+    return (
+      <div className="box-group-forecasts">
+        <p className="box-group-forecasts__message">{error?.message}</p>
       </div>
     );
   }
