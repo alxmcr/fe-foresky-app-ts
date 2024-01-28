@@ -3,6 +3,7 @@ import useCurrentForecast from '../../../hooks/useCurrentForecast';
 import { CityContext } from '../../../providers/CityContext';
 import CardHeaderForecastToday from '../CardHeaderForecastToday';
 import CardBodyForecastToday from '../CardBodyForecastToday';
+import CardFooterForecastToday from '../CardFooterForecastToday';
 
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
@@ -31,6 +32,7 @@ export default function CardForecastToday() {
         lastUpdatedAt={currentForecast?.current.last_updated || ''}
       />
       <CardBodyForecastToday currentForecast={currentForecast} />
+      <CardFooterForecastToday currentForecast={currentForecast} />
     </article>
   );
 }
