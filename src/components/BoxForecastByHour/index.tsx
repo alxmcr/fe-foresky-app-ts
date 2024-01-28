@@ -24,7 +24,7 @@ export default function BoxForecastByHour({ hour }: BoxForecastByHourProps) {
         <p className="box-forecast-hour__temperature">{hour.temp_c} °C</p>
       </div>
       <div className="box-forecast-hour__footer">
-        <p className="box-forecast-hour__hour">
+        <p className="box-forecast-hour__time">
           {extractTimeStrFromDate(hour.time)}
         </p>
       </div>

@@ -8,4 +8,24 @@
   padding: 0.5rem 0;
 
   min-width: 7rem;
+
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 4.5rem;
+  }
+
+  &__temperature {
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__time {
+    color: #5e5555;
+    font-size: 0.8rem;
+    margin: 0;
+    text-align: center;
+  }
 }
