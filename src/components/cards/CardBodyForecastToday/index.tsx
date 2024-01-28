@@ -15,16 +15,16 @@ export default function CardBodyForecastToday({
   return (
     <div className="card-body-forecast-today">
       <img
-        src={currentForecast.condition.icon}
-        alt={currentForecast.condition.text}
+        src={currentForecast?.condition?.icon}
+        alt={currentForecast?.condition?.text}
         className="card-body-forecast-today__image"
       />
       <div className="card-body-forecast-today__condition">
         <p className="card-body-forecast-today__temperature">
-          {currentForecast.temp_c} °C
+          {currentForecast?.temp_c} °C
         </p>
         <p className="card-body-forecast-today__name">
-          {currentForecast.condition.text}
+          {currentForecast?.condition?.text}
         </p>
       </div>
     </div>
