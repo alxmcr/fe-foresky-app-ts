@@ -1,24 +1,33 @@
+import { Weather } from '../../../@types/typeForecasts';
 import { basicFormatDateStr } from '../../../helpers/dateHelpers';
 import IconMapPin from '../../icons/IconMapPin';
 import './CardHeaderForecastToday.scss';
 
 type CardHeaderForecastTodayProps = {
-  locationName: string;
-  lastUpdatedAt: string;
+  currentWeather: Weather | null;
 };
 
 export default function CardHeaderForecastToday({
-  locationName = '_',
-  lastUpdatedAt = '2024-01-26 16:15',
+  currentWeather,
 }: CardHeaderForecastTodayProps) {
+  if (currentWeather === null) {
+    return null;
+  }
+
   return (
     <header className="header-forecast-today">
       <div className="header-forecast-today__location">
         <IconMapPin />
-        <h3 className="header-forecast-today__location-details">{locationName}</h3>
+        <h3 className="header-forecast-today__location-details">
+          {currentWeather.location !== null
+            ? currentWeather.location.name
+            : null}
+        </h3>
       </div>
       <p className="header-forecast-today__lastupdated">
-        {basicFormatDateStr(lastUpdatedAt, 'en-US')}
+        {currentWeather.current.last_updated !== null
+          ? basicFormatDateStr(currentWeather.current.last_updated, 'en-US')
+          : null}
       </p>
     </header>
   );

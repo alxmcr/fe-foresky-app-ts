@@ -29,10 +29,7 @@ export default function CardForecastToday() {
 
   return (
     <article className="card-forecast-today">
-      <CardHeaderForecastToday
-        locationName={currentWeather?.location.name || ''}
-        lastUpdatedAt={currentWeather?.current.last_updated || ''}
-      />
+      <CardHeaderForecastToday currentWeather={currentWeather || null} />
       <CardBodyForecastToday
         currentForecast={currentWeather?.current || null}
       />
