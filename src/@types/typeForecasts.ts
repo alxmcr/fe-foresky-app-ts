@@ -1,3 +1,8 @@
+export interface Weather {
+  location: Location;
+  current: Current;
+}
+
 export interface WeatherWithForecast {
   location: Location;
   current: Current;

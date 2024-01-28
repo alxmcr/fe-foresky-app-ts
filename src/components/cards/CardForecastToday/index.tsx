@@ -1,15 +1,15 @@
 import React from 'react';
-import useCurrentForecast from '../../../hooks/useCurrentForecast';
+import { LoadingStates } from '../../../@types/appTypes';
+import useCurrentWeather from '../../../hooks/useCurrentWeather';
 import { CityContext } from '../../../providers/CityContext';
-import CardHeaderForecastToday from '../CardHeaderForecastToday';
 import CardBodyForecastToday from '../CardBodyForecastToday';
 import CardFooterForecastToday from '../CardFooterForecastToday';
-import { LoadingStates } from '../../../@types/appTypes';
+import CardHeaderForecastToday from '../CardHeaderForecastToday';
 import './CardForecastToday.scss';
 
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
-  const { currentForecast, loading, error } = useCurrentForecast(nameCity);
+  const { currentWeather, loading, error } = useCurrentWeather(nameCity);
 
   if (loading === LoadingStates.PENDING) {
     return (
@@ -30,11 +30,15 @@ export default function CardForecastToday() {
   return (
     <article className="card-forecast-today">
       <CardHeaderForecastToday
-        locationName={currentForecast?.location.name || ''}
-        lastUpdatedAt={currentForecast?.current.last_updated || ''}
+        locationName={currentWeather?.location.name || ''}
+        lastUpdatedAt={currentWeather?.current.last_updated || ''}
       />
-      <CardBodyForecastToday currentForecast={currentForecast} />
-      <CardFooterForecastToday currentForecast={currentForecast} />
+      <CardBodyForecastToday
+        currentForecast={currentWeather?.current || null}
+      />
+      <CardFooterForecastToday
+        currentForecast={currentWeather?.current || null}
+      />
     </article>
   );
 }
