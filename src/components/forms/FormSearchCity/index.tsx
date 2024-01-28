@@ -29,7 +29,6 @@ export default function FormSearchCity({
 
     try {
       const service = new WeatherAPIImpl();
-      console.log({ nameCity, service });
       // Searching
       setStatusSearch(LoadingStates.PENDING);
       localStorage.setItem('city', nameCity);

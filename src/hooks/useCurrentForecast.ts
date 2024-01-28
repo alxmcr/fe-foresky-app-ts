@@ -5,7 +5,6 @@ import { QueryCity } from '../services/IWeatherAPI';
 import { WeatherAPIImpl } from '../services/WeatherAPIImpl';
 
 export default function useCurrentForecast(nameCity = '') {
-  console.log("🚀 ~ useCurrentForecast ~ nameCity:", nameCity)
   const [currentForecast, setCurrentForecast] =
     React.useState<CurrentForecast | null>(null);
   const [loading, setLoading] = React.useState(LoadingStates.IDLE);
@@ -19,7 +18,6 @@ export default function useCurrentForecast(nameCity = '') {
         nameCity,
         hasAirQuality: 'no',
       };
-      console.log("🚀 ~ fetchCurrentForecast ~ query:", query)
 
       try {
         setLoading(LoadingStates.PENDING);
