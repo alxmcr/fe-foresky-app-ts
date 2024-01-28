@@ -2,6 +2,7 @@ import React from 'react';
 import { LoadingStates } from '../../../@types/appTypes';
 import useForecastsThisWeek from '../../../hooks/useForecastsThisWeek';
 import { CityContext } from '../../../providers/CityContext';
+import GroupForecastsByWeek from '../../groups/GroupForecastsByWeek';
 
 export default function SectionGroupForecastByWeek() {
   const { nameCity } = React.useContext(CityContext);
@@ -30,7 +31,7 @@ export default function SectionGroupForecastByWeek() {
   return (
     <section className="section-group-forecasts-this-week">
       <h2 className="section-group-forecasts-this-week__title">This week</h2>
-      <pre>{JSON.stringify(forecasts?.forecast, null, 2)}</pre>
+      <GroupForecastsByWeek forecasts={forecasts?.forecast || null} />
     </section>
   );
 }
