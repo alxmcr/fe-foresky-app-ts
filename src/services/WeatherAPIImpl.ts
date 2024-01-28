@@ -77,7 +77,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
     return data;
   }
   async findForecastsByCity(query: QueryCity): Promise<ForecastForNextDays> {
-    const { nameCity, hasAirQuality, hasAlerts, days } = query;
+    const { nameCity, hasAirQuality, days } = query;
 
     if (this.WEATHER_API_KEY === null || this.WEATHER_API_KEY === undefined) {
       throw new Error('API KEY is invalid!');
@@ -95,20 +95,11 @@ export class WeatherAPIImpl implements IWeatherAPI {
       throw new Error('Air quality is invalid!');
     }
 
-    if (hasAlerts === '' || hasAlerts === null || hasAlerts === undefined) {
-      throw new Error('Alerts is invalid!');
-    }
-
-    if (days === null || days === undefined) {
-      throw new Error('Days is invalid!');
-    }
-
     const params = new URLSearchParams();
     params.append('key', this.WEATHER_API_KEY);
     params.append('q', nameCity);
-    params.append('aqi', hasAlerts);
-    params.append('alerts', hasAlerts);
-    params.append('days', days.toString());
+    params.append('aqi', hasAirQuality);
+    params.append('days', '7');
 
     const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.forecast}`,
