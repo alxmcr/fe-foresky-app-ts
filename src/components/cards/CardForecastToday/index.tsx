@@ -23,7 +23,7 @@ export default function CardForecastToday() {
   if (loading === LoadingStates.ERROR && error !== null) {
     return (
       <article className="card-forecast-today">
-        <p className="card-forecast-today__message">{error.message}</p>;
+        <p className="card-forecast-today__message">{error.message}</p>
       </article>
     );
   }
