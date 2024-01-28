@@ -61,8 +61,7 @@ HTML, CSS, JavaScript, React.js
 
 - Home page
 
-![image](https://github.com/alxmcr/weather-app/assets/8689897/831df28b-2de9-4827-b63e-a2fa3fcc791c)
-
+![image](https://github.com/alxmcr/fe-foresky-app-ts/assets/8689897/9e50b65c-74ce-40b1-bb55-d6ea6335ba85)
   
 - Forecast page
 
