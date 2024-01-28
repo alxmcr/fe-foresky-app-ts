@@ -35,9 +35,9 @@ export default function FormSearchCity({
       localStorage.setItem('city', nameCity);
 
       const city = await service.findCityByName(nameCity);
+      setStatusSearch(LoadingStates.SUCCESS);
 
       if (city !== null) {
-        setStatusSearch(LoadingStates.SUCCESS);
         // Redirect
         navigate(ForecastRoute.path);
       }

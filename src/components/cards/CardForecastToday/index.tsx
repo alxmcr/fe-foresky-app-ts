@@ -4,12 +4,13 @@ import { CityContext } from '../../../providers/CityContext';
 import CardHeaderForecastToday from '../CardHeaderForecastToday';
 import CardBodyForecastToday from '../CardBodyForecastToday';
 import CardFooterForecastToday from '../CardFooterForecastToday';
+import { LoadingStates } from '../../../@types/appTypes';
 
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
   const { currentForecast, loading, error } = useCurrentForecast(nameCity);
 
-  if (loading) {
+  if (loading === LoadingStates.PENDING) {
     return (
       <article className="card-forecast-today">
         <p className="card-forecast-today__message">Loading...</p>
@@ -17,7 +18,7 @@ export default function CardForecastToday() {
     );
   }
 
-  if (!loading && error !== null) {
+  if (loading === LoadingStates.ERROR && error !== null) {
     return (
       <article className="card-forecast-today">
         <p className="card-forecast-today__message">{error.message}</p>;
