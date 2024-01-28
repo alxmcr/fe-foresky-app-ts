@@ -26,7 +26,7 @@ export default function SectionGroupForecastByHour() {
 
   return (
     <section className="section-group-forecasts">
-      <h2>Next Hours</h2>
+      <h2 className="section-group-forecasts__title">Next Hours</h2>
       <GroupForecastByHour weather={weather} />
     </section>
   );
