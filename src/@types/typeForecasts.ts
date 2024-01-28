@@ -63,7 +63,7 @@ export interface Forecastday {
   date_epoch: number;
   day: Day;
   astro: Astro;
-  hours: Hour[];
+  hour: Hour[];
 }
 
 export interface Astro {
