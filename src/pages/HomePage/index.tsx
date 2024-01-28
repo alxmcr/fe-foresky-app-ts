@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <main className="home-page">
       <IconWeather />
-      <h1 className="home-page__title">Weather App</h1>
+      <h1 className="home-page__title">Foresky App</h1>
       <CardFormSearchCity />
       <p className="home-page__poweredby">
         {'Powered by '}
