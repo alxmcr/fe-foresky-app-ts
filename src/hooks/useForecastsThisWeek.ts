@@ -4,7 +4,7 @@ import { LoadingStates } from '../@types/appTypes';
 import { QueryCity } from '../services/IWeatherAPI';
 import { ForecastForNextDays } from '../@types/typeForecasts';
 
-export default function useForecastsNextDays(nameCity = '') {
+export default function useForecastsThisWeek(nameCity = '') {
   const [forecastsNextDays, setForecastsNextDays] =
     React.useState<ForecastForNextDays | null>(null);
   const [loading, setLoading] = React.useState(LoadingStates.IDLE);

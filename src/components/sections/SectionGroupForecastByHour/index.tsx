@@ -1,12 +1,12 @@
 import React from 'react';
 import { LoadingStates } from '../../../@types/appTypes';
-import useForecastsNextDays from '../../../hooks/useForecastsNextDays';
+import useForecastsThisWeek from '../../../hooks/useForecastsThisWeek';
 import { CityContext } from '../../../providers/CityContext';
 import GroupForecastByHour from '../../GroupForecastByHour';
 
 export default function SectionGroupForecastByHour() {
   const { nameCity } = React.useContext(CityContext);
-  const { forecasts, loading, error } = useForecastsNextDays(nameCity);
+  const { forecasts, loading, error } = useForecastsThisWeek(nameCity);
 
   if (loading === LoadingStates.PENDING) {
     return (
