@@ -8,9 +8,7 @@ export const getCurrentForecastByCity = async ({
   const SERVER_API = 'https://api.weatherapi.com/v1';
   const RESOURCE = 'forecast.json';
 
-  let fullUrl = new URL(`${SERVER_API}/${RESOURCE}`);
-
-  let params = new URLSearchParams();
+  const params = new URLSearchParams();
   if (APPID !== null) {
     params.append('key', APPID);
   }
@@ -26,6 +24,8 @@ export const getCurrentForecastByCity = async ({
   if (days !== null) {
     params.append('days', days.toString());
   }
+
+  const fullUrl = new URL(`${SERVER_API}/${RESOURCE}`);
   fullUrl.search = new URLSearchParams(params).toString();
   return fetch(fullUrl);
 };

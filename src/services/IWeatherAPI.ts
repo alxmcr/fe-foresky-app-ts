@@ -1,5 +1,5 @@
 import { City } from '../@types/typeCity';
-import { CurrentForecast, Weather } from '../@types/typeForecasts';
+import { Current, WeatherWithForecast } from '../@types/typeForecasts';
 
 export type QueryCity = {
   nameCity: string;
@@ -10,6 +10,6 @@ export type QueryCity = {
 
 export interface IWeatherAPI {
   findCityByName(nameCity: string): Promise<City>;
-  findCurrentForecastByCity(query: QueryCity): Promise<CurrentForecast>;
-  findWeatherDetailsByCity(query: QueryCity): Promise<Weather>;
+  findCurrentForecastByCity(query: QueryCity): Promise<Current>;
+  findWeatherDetailsByCity(query: QueryCity): Promise<WeatherWithForecast>;
 }
