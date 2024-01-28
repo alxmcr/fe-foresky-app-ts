@@ -1,4 +1,4 @@
-import { WeatherWithForecast } from '../../@types/typeForecasts';
+import { Hour, WeatherWithForecast } from '../../@types/typeForecasts';
 import BoxForecastByHour from '../BoxForecastByHour';
 
 type GroupForecastByHourProps = {
@@ -10,13 +10,16 @@ export default function GroupForecastByHour({
 }: GroupForecastByHourProps) {
   return (
     <div className="group-forecast-by-hour">
-      {weather.forecast.forecastsByDays.map((forecastByDay, index) => (
-        <BoxForecastByHour
-          key={index}
-          current={forecastByDay}
-          time={forecastByDay.hour}
-        />
-      ))}
+      {weather.forecast.forecastsByDays.map((forecastByDay) =>
+        forecastByDay.hours.map((hour: Hour) => (
+          <BoxForecastByHour
+            key={hour.time_epoch}
+            condition={hour.condition}
+            time={hour.time}
+            temp_c={hour.temp_c}
+          />
+        )),
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@ export interface WeatherWithForecast {
 }
 
 export interface Forecast {
-  forecastday: Forecastday[];
+  forecastsByDays: Forecastday[];
 }
 
 export interface Current {
@@ -63,7 +63,7 @@ export interface Forecastday {
   date_epoch: number;
   day: Day;
   astro: Astro;
-  hour: Hour[];
+  hours: Hour[];
 }
 
 export interface Astro {
