@@ -30,7 +30,7 @@ export default function SectionGroupForecastByWeek() {
   return (
     <section className="section-group-forecasts-this-week">
       <h2 className="section-group-forecasts-this-week__title">This week</h2>
-      {JSON.stringify(forecasts, null, 2)}
+      <pre>{JSON.stringify(forecasts?.forecast, null, 2)}</pre>
     </section>
   );
 }
