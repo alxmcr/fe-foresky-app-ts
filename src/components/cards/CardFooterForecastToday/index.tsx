@@ -2,6 +2,7 @@ import { CurrentForecast } from '../../../@types/typeForecasts';
 import IconCloud from '../../icons/IconCloud';
 import IconDropWater from '../../icons/IconDropWater';
 import IconWind from '../../icons/IconWind';
+import './CardFooterForecastToday.scss';
 
 type CardFooterForecastTodayProps = {
   currentForecast: CurrentForecast | null;

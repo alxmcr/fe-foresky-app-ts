@@ -5,6 +5,7 @@ import CardHeaderForecastToday from '../CardHeaderForecastToday';
 import CardBodyForecastToday from '../CardBodyForecastToday';
 import CardFooterForecastToday from '../CardFooterForecastToday';
 import { LoadingStates } from '../../../@types/appTypes';
+import './CardForecastToday.scss';
 
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
