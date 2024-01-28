@@ -1,8 +1,8 @@
-import { Weather } from '../../@types/typeForecasts';
+import { WeatherWithForecast } from '../../@types/typeForecasts';
 import BoxForecastByHour from '../BoxForecastByHour';
 
 type GroupForecastByHourProps = {
-  weather: Weather;
+  weather: WeatherWithForecast;
 };
 
 export default function GroupForecastByHour({

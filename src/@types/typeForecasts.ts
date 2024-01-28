@@ -4,6 +4,10 @@ export interface WeatherWithForecast {
   forecast: Forecast;
 }
 
+export interface Forecast {
+  forecastday: Forecastday[];
+}
+
 export interface Current {
   last_updated_epoch: number;
   last_updated: string;
@@ -52,10 +56,6 @@ export enum Text {
   PatchyRainNearby = 'Patchy rain nearby',
   Sunny = 'Sunny',
   TextPartlyCloudy = 'Partly Cloudy ',
-}
-
-export interface Forecast {
-  forecastday: Forecastday[];
 }
 
 export interface Forecastday {
