@@ -8,6 +8,24 @@
   min-height: 100vh;
   padding: 0.5rem 1rem;
 
+  &__button {
+    appearance: none;
+    background-color: #000;
+    color: #fff;
+
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    text-align: center;
+
+    &:hover {
+      background-color: #3d3d3d;
+      color: #fff;
+    }
+  }
+
   &__link {
     font-size: 1.2rem;
     font-weight: 800;

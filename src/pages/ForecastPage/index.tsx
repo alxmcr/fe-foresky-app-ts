@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LoadingStates } from '../../@types/appTypes';
+import AppButton from '../../components/buttons/AppButton';
 import CardForecastToday from '../../components/cards/CardForecastToday';
 import SectionGroupForecastByHour from '../../components/sections/SectionGroupForecastByHour';
 import SectionGroupForecastByWeek from '../../components/sections/SectionGroupForecastByWeek';
@@ -8,7 +9,6 @@ import useCurrentWeather from '../../hooks/useCurrentWeather';
 import { CityContext } from '../../providers/CityContext';
 import { HomeRoute } from '../../router/constants.routes';
 import './ForecastPage.scss';
-import AppButton from '../../components/buttons/AppButton';
 
 export default function ForecastPage() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ export default function ForecastPage() {
       <main className="forecast-page">
         <p className="forecast-page__message">{error.message}</p>
 
-        <AppButton onClick={handlerReturnHome} className="forecast-page__link">
+        <AppButton onClick={handlerReturnHome} className="forecast-page__button">
           Return to home
         </AppButton>
       </main>
@@ -46,9 +46,9 @@ export default function ForecastPage() {
   if (currentWeather !== null) {
     return (
       <main className="forecast-page">
-        <NavLink to={HomeRoute.path} className="forecast-page__link">
+         <AppButton onClick={handlerReturnHome} className="forecast-page__button">
           Return to home
-        </NavLink>
+        </AppButton>
         <CardForecastToday currentWeather={currentWeather} />
         <SectionGroupForecastByHour />
         <SectionGroupForecastByWeek />
