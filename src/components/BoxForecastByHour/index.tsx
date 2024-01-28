@@ -1,18 +1,12 @@
-import { Condition } from '../../@types/typeForecasts';
+import { Hour } from '../../@types/typeForecasts';
 import { extractTimeStrFromDate } from '../../helpers/dateHelpers';
 
 type BoxForecastByHourProps = {
-  condition: Condition | null;
-  time: string;
-  temp_c: number;
+  hour: Hour | null;
 };
 
-export default function BoxForecastByHour({
-  condition,
-  time = '',
-  temp_c = 0,
-}: BoxForecastByHourProps) {
-  if (condition === null) {
+export default function BoxForecastByHour({ hour }: BoxForecastByHourProps) {
+  if (hour === null) {
     return null;
   }
 
@@ -20,17 +14,17 @@ export default function BoxForecastByHour({
     <div className="box-forecast-hour">
       <div className="box-forecast-hour__header">
         <img
-          src={condition.icon}
-          alt={condition.text}
+          src={hour.condition.icon}
+          alt={hour.condition.text}
           className="box-forecast-hour__icon"
         />
       </div>
       <div className="box-forecast-hour__body">
-        <p className="box-forecast-hour__temperature">{temp_c} °C</p>
+        <p className="box-forecast-hour__temperature">{hour.temp_c} °C</p>
       </div>
       <div className="box-forecast-hour__footer">
         <p className="box-forecast-hour__hour">
-          {extractTimeStrFromDate(time)}
+          {extractTimeStrFromDate(hour.time)}
         </p>
       </div>
     </div>

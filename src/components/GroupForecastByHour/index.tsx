@@ -12,12 +12,7 @@ export default function GroupForecastByHour({
     <div className="group-forecast-by-hour">
       {weather.forecast.forecastsByDays.map((forecastByDay) =>
         forecastByDay.hours.map((hour: Hour) => (
-          <BoxForecastByHour
-            key={hour.time_epoch}
-            condition={hour.condition}
-            time={hour.time}
-            temp_c={hour.temp_c}
-          />
+          <BoxForecastByHour key={hour.time_epoch} hour={hour} />
         )),
       )}
     </div>
