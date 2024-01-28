@@ -1,11 +1,13 @@
 import React from 'react';
 import { LoadingStates } from '../@types/appTypes';
-import { Weather } from '../@types/typeForecasts';
+import { WeatherWithForecast } from '../@types/typeForecasts';
 import { QueryCity } from '../services/IWeatherAPI';
 import { WeatherAPIImpl } from '../services/WeatherAPIImpl';
 
 export default function useWeather(nameCity = '') {
-  const [weather, setWeather] = React.useState<Weather | null>(null);
+  const [weather, setWeather] = React.useState<WeatherWithForecast | null>(
+    null,
+  );
   const [loading, setLoading] = React.useState(LoadingStates.IDLE);
   const [error, setError] = React.useState<Error | null>(null);
 
