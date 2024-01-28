@@ -12,7 +12,7 @@ export default function CardForecastToday() {
   if (loading) {
     return (
       <article className="card-forecast-today">
-        <p className="card-forecast-today__message">Loading...</p>;
+        <p className="card-forecast-today__message">Loading...</p>
       </article>
     );
   }
