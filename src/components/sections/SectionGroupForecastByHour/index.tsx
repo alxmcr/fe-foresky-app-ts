@@ -3,6 +3,7 @@ import { LoadingStates } from '../../../@types/appTypes';
 import useForecastsThisWeek from '../../../hooks/useForecastsThisWeek';
 import { CityContext } from '../../../providers/CityContext';
 import GroupForecastByHour from '../../GroupForecastByHour';
+import './SectionGroupForecastByHour.scss';
 
 export default function SectionGroupForecastByHour() {
   const { nameCity } = React.useContext(CityContext);
