@@ -21,7 +21,6 @@ export default function FormSearchCity({
   const handlerNameCity = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setNameCity(ev.target.value);
     setErrorCity(null);
-    localStorage.removeItem('city');
   };
 
   const handleSearch = async (ev: React.FormEvent) => {
@@ -31,7 +30,6 @@ export default function FormSearchCity({
       const service = new WeatherAPIImpl();
       // Searching
       setStatusSearch(LoadingStates.PENDING);
-      localStorage.setItem('city', nameCity);
 
       const city = await service.findCityByName(nameCity);
       setStatusSearch(LoadingStates.SUCCESS);
@@ -43,7 +41,6 @@ export default function FormSearchCity({
     } catch (error) {
       setStatusSearch(LoadingStates.ERROR);
 
-      localStorage.removeItem('city');
       if (error instanceof Error) {
         setErrorCity(error);
       }

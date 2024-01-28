@@ -45,16 +45,26 @@ export class WeatherAPIImpl implements IWeatherAPI {
   async findCurrentWeatherByCity(query: QueryCity): Promise<Weather> {
     const { nameCity, hasAirQuality } = query;
 
+    if (this.WEATHER_API_KEY === null || this.WEATHER_API_KEY === undefined) {
+      throw new Error('API KEY is invalid!');
+    }
+
+    if (nameCity === '' || nameCity === null || nameCity === undefined) {
+      throw new Error('Name city is invalid!');
+    }
+
+    if (
+      hasAirQuality === '' ||
+      hasAirQuality === null ||
+      hasAirQuality === undefined
+    ) {
+      throw new Error('Air quality is invalid!');
+    }
+
     const params = new URLSearchParams();
-    if (this.WEATHER_API_KEY !== null) {
-      params.append('key', this.WEATHER_API_KEY);
-    }
-    if (nameCity !== null) {
-      params.append('q', nameCity);
-    }
-    if (hasAirQuality !== null) {
-      params.append('aqi', hasAirQuality);
-    }
+    params.append('key', this.WEATHER_API_KEY);
+    params.append('q', nameCity);
+    params.append('aqi', hasAirQuality);
 
     const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.CurrentForecast}`,
@@ -66,27 +76,39 @@ export class WeatherAPIImpl implements IWeatherAPI {
 
     return data;
   }
-  async findForecastsByCity(
-    query: QueryCity,
-  ): Promise<ForecastForNextDays> {
+  async findForecastsByCity(query: QueryCity): Promise<ForecastForNextDays> {
     const { nameCity, hasAirQuality, hasAlerts, days } = query;
 
+    if (this.WEATHER_API_KEY === null || this.WEATHER_API_KEY === undefined) {
+      throw new Error('API KEY is invalid!');
+    }
+
+    if (nameCity === '' || nameCity === null || nameCity === undefined) {
+      throw new Error('Name city is invalid!');
+    }
+
+    if (
+      hasAirQuality === '' ||
+      hasAirQuality === null ||
+      hasAirQuality === undefined
+    ) {
+      throw new Error('Air quality is invalid!');
+    }
+
+    if (hasAlerts === '' || hasAlerts === null || hasAlerts === undefined) {
+      throw new Error('Alerts is invalid!');
+    }
+
+    if (days === null || days === undefined) {
+      throw new Error('Days is invalid!');
+    }
+
     const params = new URLSearchParams();
-    if (this.WEATHER_API_KEY !== null) {
-      params.append('key', this.WEATHER_API_KEY);
-    }
-    if (nameCity !== null) {
-      params.append('q', nameCity);
-    }
-    if (hasAirQuality !== null) {
-      params.append('aqi', hasAirQuality);
-    }
-    if (hasAlerts !== null && hasAlerts !== undefined) {
-      params.append('alerts', hasAlerts);
-    }
-    if (days !== null && days !== undefined) {
-      params.append('days', days.toString());
-    }
+    params.append('key', this.WEATHER_API_KEY);
+    params.append('q', nameCity);
+    params.append('aqi', hasAlerts);
+    params.append('alerts', hasAlerts);
+    params.append('days', days.toString());
 
     const fullUrl = new URL(
       `${this.WEATHER_API_BASE_URL}/${this.WEATHER_API_VERSION}/${API_RESOURCES.forecast}`,

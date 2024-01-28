@@ -19,14 +19,14 @@ export default function CardHeaderForecastToday({
       <div className="header-forecast-today__location">
         <IconMapPin />
         <h3 className="header-forecast-today__location-details">
-          {currentWeather.location !== null
-            ? currentWeather.location.name
+          {currentWeather?.location !== null
+            ? currentWeather?.location?.name
             : null}
         </h3>
       </div>
       <p className="header-forecast-today__lastupdated">
-        {currentWeather.current.last_updated !== null
-          ? basicFormatDateStr(currentWeather.current.last_updated, 'en-US')
+        {currentWeather?.current?.last_updated !== null
+          ? basicFormatDateStr(currentWeather?.current?.last_updated, 'en-US')
           : null}
       </p>
     </header>

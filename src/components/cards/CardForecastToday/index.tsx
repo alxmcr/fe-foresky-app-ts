@@ -10,6 +10,7 @@ import './CardForecastToday.scss';
 export default function CardForecastToday() {
   const { nameCity } = React.useContext(CityContext);
   const { currentWeather, loading, error } = useCurrentWeather(nameCity);
+  console.log({ currentWeather, loading, error });
 
   if (loading === LoadingStates.PENDING) {
     return (

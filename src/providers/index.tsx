@@ -7,9 +7,7 @@ type CityProviderProps = {
 };
 
 export default function CityProvider({ children }: CityProviderProps) {
-  const [nameCity, setNameCity] = React.useState(
-    localStorage.getItem('city') || '',
-  );
+  const [nameCity, setNameCity] = React.useState('');
 
   const value: CityContextData = {
     nameCity,
