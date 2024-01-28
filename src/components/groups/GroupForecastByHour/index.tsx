@@ -1,5 +1,5 @@
-import { Hour, ForecastForNextDays } from '../../@types/typeForecasts';
-import BoxForecastByHour from '../boxes/BoxForecastByHour';
+import { Hour, ForecastForNextDays } from '../../../@types/typeForecasts';
+import BoxForecastByHour from '../../boxes/BoxForecastByHour';
 import './GroupForecastByHour.scss';
 
 type GroupForecastByHourProps = {
