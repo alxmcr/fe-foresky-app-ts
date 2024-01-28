@@ -1,0 +1,11 @@
+.group-forecast-by-hour {
+  background-color: #fff;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  height: 11rem;
+  overflow: auto;
+
+  width: 100%;
+}

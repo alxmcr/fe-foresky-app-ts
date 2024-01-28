@@ -1,5 +1,6 @@
 import { Hour, WeatherWithForecast } from '../../@types/typeForecasts';
 import BoxForecastByHour from '../BoxForecastByHour';
+import './GroupForecastByHour.scss';
 
 type GroupForecastByHourProps = {
   weather: WeatherWithForecast | null;
