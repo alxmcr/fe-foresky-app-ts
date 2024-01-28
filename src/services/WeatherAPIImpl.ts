@@ -20,11 +20,11 @@ export class WeatherAPIImpl implements IWeatherAPI {
   }
 
   async findCityByName(nameCity = ''): Promise<City> {
-    if (this.WEATHER_API_KEY !== null) {
+    if (this.WEATHER_API_KEY === null || this.WEATHER_API_KEY === undefined) {
       throw new Error('API KEY is invalid!');
     }
 
-    if (nameCity !== null) {
+    if (nameCity === '' || nameCity === null || nameCity === undefined) {
       throw new Error('Name city is invalid!');
     }
 

@@ -3,6 +3,8 @@ import { WeatherAPIImpl } from '../../../services/WeatherAPIImpl';
 import { LoadingStates } from '../../../@types/appTypes';
 import './FormSearchCity.scss';
 import { CityContext } from '../../../providers/CityContext';
+import { useNavigate } from 'react-router-dom';
+import { ForecastRoute } from '../../../router/constants.routes';
 
 type FormSearchCityProps = {
   setErrorCity: React.Dispatch<React.SetStateAction<Error | null>>;
@@ -13,6 +15,7 @@ export default function FormSearchCity({
   setErrorCity,
   setStatusSearch,
 }: FormSearchCityProps) {
+  const navigate = useNavigate();
   const { nameCity, setNameCity } = React.useContext(CityContext);
 
   const handlerNameCity = (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,14 +28,16 @@ export default function FormSearchCity({
 
     try {
       const service = new WeatherAPIImpl();
+      console.log("🚀 ~ handleSearch ~ service:", service)
       // Searching
       setStatusSearch(LoadingStates.PENDING);
       const city = await service.findCityByName(nameCity);
 
       if (city !== null) {
-        console.log(city);
         localStorage.setItem('city', city.name);
         setStatusSearch(LoadingStates.SUCCESS);
+        // Redirect
+        navigate(ForecastRoute.path);
       }
     } catch (error) {
       setStatusSearch(LoadingStates.ERROR);
