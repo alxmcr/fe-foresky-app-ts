@@ -5,7 +5,7 @@ export interface WeatherWithForecast {
 }
 
 export interface Forecast {
-  forecastsByDays: Forecastday[];
+  forecastday: Forecastday[];
 }
 
 export interface Current {
