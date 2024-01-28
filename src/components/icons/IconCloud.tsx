@@ -1,18 +1,9 @@
 export default function IconCloud() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={44}
-      height={44}
-      fill="none"
-      strokeWidth={1.5}
-      color="#000"
-      viewBox="0 0 24 24"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none">
       <path
-        stroke="#000"
-        strokeLinejoin="round"
-        d="M12 4c-6 0-6 4-6 6-1.667 0-5 1-5 5s3.333 5 5 5h12c1.667 0 5-1 5-5s-3.333-5-5-5c0-2 0-6-6-6Z"
+        fill="currentColor"
+        d="M18.8 10.908c.128-.325.2-.68.2-1.05 0-1.61-1.344-2.915-3-2.915-.616 0-1.19.182-1.666.492A5.024 5.024 0 0 0 10 5C7.237 5 5 7.174 5 9.857c0 .082.003.164.006.246C3.256 10.701 2 12.323 2 14.229 2 16.642 4.016 18.6 6.5 18.6H18c2.21 0 4-1.74 4-3.886 0-1.879-1.375-3.448-3.2-3.806Z"
       />
     </svg>
   );

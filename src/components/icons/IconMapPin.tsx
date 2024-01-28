@@ -1,24 +1,9 @@
 export default function IconMapPin() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={44}
-      height={44}
-      fill="none"
-      strokeWidth={1.5}
-      color="#000"
-      viewBox="0 0 24 24"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none">
       <path
-        stroke="#000"
-        d="M20 10c0 4.418-8 12-8 12s-8-7.582-8-12a8 8 0 1 1 16 0Z"
-      />
-      <path
-        fill="#000"
-        stroke="#000"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+        fill="currentColor"
+        d="M11.5 2C7.91 2 5 5.014 5 8.733c0 3.795 1.816 4.604 3.824 7.128C11.224 18.881 11.5 22 11.5 22s.275-3.119 2.677-6.139C16.184 13.337 18 12.528 18 8.733 18 5.013 15.09 2 11.5 2Zm0 9.06c-1.24 0-2.246-1.042-2.246-2.327s1.005-2.327 2.246-2.327c1.24 0 2.246 1.042 2.246 2.327s-1.005 2.326-2.246 2.326Z"
       />
     </svg>
   );
