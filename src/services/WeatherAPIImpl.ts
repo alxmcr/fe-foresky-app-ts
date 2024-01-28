@@ -77,7 +77,7 @@ export class WeatherAPIImpl implements IWeatherAPI {
     return data;
   }
   async findForecastsByCity(query: QueryCity): Promise<ForecastForNextDays> {
-    const { nameCity, hasAirQuality, days } = query;
+    const { nameCity, hasAirQuality } = query;
 
     if (this.WEATHER_API_KEY === null || this.WEATHER_API_KEY === undefined) {
       throw new Error('API KEY is invalid!');
