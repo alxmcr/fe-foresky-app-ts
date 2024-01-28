@@ -1,4 +1,4 @@
-import CardFormSearchCity from '../../components/cards/CardFormSearchCity';
+import CardFormSearchCity from '../../components/BoxFormSearchCity';
 import IconWeather from '../../components/icons/IconWeather';
 import './HomePage.scss';
 
