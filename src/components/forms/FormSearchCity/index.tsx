@@ -28,7 +28,7 @@ export default function FormSearchCity({
 
     try {
       const service = new WeatherAPIImpl();
-      console.log("🚀 ~ handleSearch ~ service:", service)
+      console.log({ nameCity, service });
       // Searching
       setStatusSearch(LoadingStates.PENDING);
       const city = await service.findCityByName(nameCity);
