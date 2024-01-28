@@ -36,5 +36,5 @@ export default function useCurrentForecast(nameCity = '') {
     fetchCurrentForecast();
   }, [nameCity]);
 
-  return [currentForecast, loading, error];
+  return { currentForecast, loading, error };
 }
