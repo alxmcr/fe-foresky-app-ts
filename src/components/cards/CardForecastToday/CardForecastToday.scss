@@ -1,3 +1,11 @@
 .card-forecast-today {
-  width: 310px;
+  width: 100%;
+  padding: 10px;
+}
+
+@media (width > 320px) {
+  .card-forecast-today {
+    width: 430px;
+    padding: 0;
+  }
 }
