@@ -1,12 +1,7 @@
-export interface Weather {
+export interface ForecastDays {
   location: Location;
   current: Current;
   forecast: Forecast;
-}
-
-export interface CurrentForecast {
-  location: Location;
-  current: Current;
 }
 
 export interface Current {
@@ -41,21 +36,23 @@ export interface Condition {
   code: number;
 }
 
-export type Icon =
-  | '//cdn.weatherapi.com/weather/64x64/day/116.png'
-  | '//cdn.weatherapi.com/weather/64x64/day/113.png'
-  | '//cdn.weatherapi.com/weather/64x64/night/113.png'
-  | '//cdn.weatherapi.com/weather/64x64/night/176.png'
-  | '//cdn.weatherapi.com/weather/64x64/night/116.png'
-  | '//cdn.weatherapi.com/weather/64x64/night/119.png';
+export enum Icon {
+  CDNWeatherapiCOMWeather64X64Day113PNG = '//cdn.weatherapi.com/weather/64x64/day/113.png',
+  CDNWeatherapiCOMWeather64X64Day116PNG = '//cdn.weatherapi.com/weather/64x64/day/116.png',
+  CDNWeatherapiCOMWeather64X64Night113PNG = '//cdn.weatherapi.com/weather/64x64/night/113.png',
+  CDNWeatherapiCOMWeather64X64Night116PNG = '//cdn.weatherapi.com/weather/64x64/night/116.png',
+  CDNWeatherapiCOMWeather64X64Night119PNG = '//cdn.weatherapi.com/weather/64x64/night/119.png',
+  CDNWeatherapiCOMWeather64X64Night176PNG = '//cdn.weatherapi.com/weather/64x64/night/176.png',
+}
 
-export type Text =
-  | 'Partly cloudy'
-  | 'Sunny'
-  | 'Clear '
-  | 'Patchy rain nearby'
-  | 'Partly Cloudy '
-  | 'Cloudy ';
+export enum Text {
+  Clear = 'Clear ',
+  Cloudy = 'Cloudy ',
+  PartlyCloudy = 'Partly cloudy',
+  PatchyRainNearby = 'Patchy rain nearby',
+  Sunny = 'Sunny',
+  TextPartlyCloudy = 'Partly Cloudy ',
+}
 
 export interface Forecast {
   forecastday: Forecastday[];
