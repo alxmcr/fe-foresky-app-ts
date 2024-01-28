@@ -1,5 +1,6 @@
 import { Forecast } from '../../../@types/typeForecasts';
 import BoxForecastByDay from '../../boxes/BoxForecastByDay';
+import './GroupForecastsByWeek.scss';
 
 type GroupForecastsByWeekProps = {
   forecasts: Forecast | null;

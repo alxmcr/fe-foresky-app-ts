@@ -2,6 +2,7 @@ import { formatDate } from 'date-fns/format';
 import { enUS } from 'date-fns/locale';
 import { Forecastday } from '../../../@types/typeForecasts';
 import { FORMAT_DATES } from '../../../utils/helpers-dates';
+import "./BoxForecastByDay.scss";
 
 type BoxForecastByDayProps = {
   forecastDay: Forecastday;
