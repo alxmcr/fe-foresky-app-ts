@@ -31,6 +31,7 @@ export default function FormSearchCity({
 
       if (city !== null) {
         console.log(city);
+        localStorage.setItem('city', city.name);
         setStatusSearch(LoadingStates.SUCCESS);
       }
     } catch (error) {
