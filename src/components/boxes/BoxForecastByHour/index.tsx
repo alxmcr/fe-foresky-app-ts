@@ -12,7 +12,7 @@ export default function BoxForecastByHour({ hour }: BoxForecastByHourProps) {
   }
 
   return (
-    <div className="box-forecast-hour">
+    <article className="box-forecast-hour">
       <div className="box-forecast-hour__header">
         <img
           src={hour.condition.icon}
@@ -28,6 +28,6 @@ export default function BoxForecastByHour({ hour }: BoxForecastByHourProps) {
           {extractTimeStrFromDate(hour.time)}
         </p>
       </div>
-    </div>
+    </article>
   );
 }
