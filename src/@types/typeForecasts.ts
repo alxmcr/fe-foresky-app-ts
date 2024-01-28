@@ -1,4 +1,4 @@
-export interface ForecastDays {
+export interface WeatherWithForecast {
   location: Location;
   current: Current;
   forecast: Forecast;
