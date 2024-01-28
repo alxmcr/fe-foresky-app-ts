@@ -1,0 +1,11 @@
+.box-forecast-hour {
+  border-right: 1px solid #ccc;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+
+  min-width: 7rem;
+}

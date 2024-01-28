@@ -1,5 +1,6 @@
 import { Hour } from '../../@types/typeForecasts';
 import { extractTimeStrFromDate } from '../../helpers/dateHelpers';
+import './BoxForecastByHour.scss';
 
 type BoxForecastByHourProps = {
   hour: Hour | null;
