@@ -1,4 +1,4 @@
-import SectionGroupForecastByHour from '../../components/SectionGroupForecastByHour';
+import SectionGroupForecastByHour from '../../components/sections/SectionGroupForecastByHour';
 import CardForecastToday from '../../components/cards/CardForecastToday';
 import './ForecastPage.scss';
 

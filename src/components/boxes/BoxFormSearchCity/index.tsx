@@ -1,6 +1,6 @@
 import React from 'react';
-import FormSearchCity from '../forms/FormSearchCity';
-import { LoadingStates } from '../../@types/appTypes';
+import FormSearchCity from '../../forms/FormSearchCity';
+import { LoadingStates } from '../../../@types/appTypes';
 import './BoxFormSearchCity.scss';
 
 export default function BoxFormSearchCity() {
