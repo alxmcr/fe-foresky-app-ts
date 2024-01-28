@@ -60,10 +60,11 @@ const extractTimeStrFromDate = (dateStr = '') => {
 };
 
 const resetTime = (date: Date) => {
-  if (date === null || date === undefined) return date;
-  date.setHours(0);
-  date.setMinutes(0);
-  date.setSeconds(0);
+  if (date !== null && date !== undefined) {
+    date.setHours(0);
+    date.setMinutes(0);
+    date.setSeconds(0);
+  }
 };
 
 export {
