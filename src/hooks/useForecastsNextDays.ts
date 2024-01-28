@@ -1,13 +1,12 @@
 import React from 'react';
-import { LoadingStates } from '../@types/appTypes';
-import { WeatherWithForecast } from '../@types/typeForecasts';
-import { QueryCity } from '../services/IWeatherAPI';
 import { WeatherAPIImpl } from '../services/WeatherAPIImpl';
+import { LoadingStates } from '../@types/appTypes';
+import { QueryCity } from '../services/IWeatherAPI';
+import { ForecastForNextDays } from '../@types/typeForecasts';
 
-export default function useWeather(nameCity = '') {
-  const [weather, setWeather] = React.useState<WeatherWithForecast | null>(
-    null,
-  );
+export default function useForecastsNextDays(nameCity = '') {
+  const [forecastsNextDays, setForecastsNextDays] =
+    React.useState<ForecastForNextDays | null>(null);
   const [loading, setLoading] = React.useState(LoadingStates.IDLE);
   const [error, setError] = React.useState<Error | null>(null);
 
@@ -22,8 +21,8 @@ export default function useWeather(nameCity = '') {
 
       try {
         setLoading(LoadingStates.PENDING);
-        const weatherData = await service.findWeatherDetailsByCity(query);
-        setWeather(weatherData);
+        const forecasts = await service.findForecastsByCity(query);
+        setForecastsNextDays(forecasts);
         setLoading(LoadingStates.SUCCESS);
       } catch (error) {
         setLoading(LoadingStates.ERROR);
@@ -37,5 +36,5 @@ export default function useWeather(nameCity = '') {
     fetchCurrentForecast();
   }, [nameCity]);
 
-  return { weather, loading, error };
+  return { forecasts: forecastsNextDays, error, loading };
 }

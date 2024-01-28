@@ -3,7 +3,7 @@ export interface Weather {
   current: Current;
 }
 
-export interface WeatherWithForecast {
+export interface ForecastForNextDays {
   location: Location;
   current: Current;
   forecast: Forecast;

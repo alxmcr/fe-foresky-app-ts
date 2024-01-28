@@ -1,9 +1,9 @@
-import { Hour, WeatherWithForecast } from '../../@types/typeForecasts';
+import { Hour, ForecastForNextDays } from '../../@types/typeForecasts';
 import BoxForecastByHour from '../boxes/BoxForecastByHour';
 import './GroupForecastByHour.scss';
 
 type GroupForecastByHourProps = {
-  weather: WeatherWithForecast | null;
+  weather: ForecastForNextDays | null;
 };
 
 export default function GroupForecastByHour({

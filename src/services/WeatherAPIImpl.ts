@@ -1,5 +1,5 @@
 import { City } from '../@types/typeCity';
-import { Weather, WeatherWithForecast } from '../@types/typeForecasts';
+import { Weather, ForecastForNextDays } from '../@types/typeForecasts';
 import { IWeatherAPI, QueryCity } from './IWeatherAPI';
 
 const API_RESOURCES = {
@@ -66,9 +66,9 @@ export class WeatherAPIImpl implements IWeatherAPI {
 
     return data;
   }
-  async findWeatherDetailsByCity(
+  async findForecastsByCity(
     query: QueryCity,
-  ): Promise<WeatherWithForecast> {
+  ): Promise<ForecastForNextDays> {
     const { nameCity, hasAirQuality, hasAlerts, days } = query;
 
     const params = new URLSearchParams();
