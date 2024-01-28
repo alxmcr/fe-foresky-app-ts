@@ -37,5 +37,5 @@ export default function useWeather(nameCity = '') {
     fetchCurrentForecast();
   }, [nameCity]);
 
-  return [weather, loading, error];
+  return { weather, loading, error };
 }
