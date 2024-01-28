@@ -1,8 +1,8 @@
 import React from 'react';
+import { LoadingStates } from '../../@types/appTypes';
 import useWeather from '../../hooks/useWeather';
 import { CityContext } from '../../providers/CityContext';
 import GroupForecastByHour from '../GroupForecastByHour';
-import { LoadingStates } from '../../@types/appTypes';
 
 export default function BoxGroupForecastByHour() {
   const { nameCity } = React.useContext(CityContext);
