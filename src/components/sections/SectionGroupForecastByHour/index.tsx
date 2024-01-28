@@ -1,17 +1,19 @@
 import React from 'react';
 import { LoadingStates } from '../../../@types/appTypes';
-import useWeather from '../../../hooks/useWeather';
+import useForecastsNextDays from '../../../hooks/useForecastsNextDays';
 import { CityContext } from '../../../providers/CityContext';
 import GroupForecastByHour from '../../GroupForecastByHour';
 
 export default function SectionGroupForecastByHour() {
   const { nameCity } = React.useContext(CityContext);
-  const { weather, loading, error } = useWeather(nameCity);
+  const { forecasts, loading, error } = useForecastsNextDays(nameCity);
 
   if (loading === LoadingStates.PENDING) {
     return (
       <section className="section-group-forecasts-by-day">
-        <p className="section-group-forecasts-by-day__message">Loading forecasts...</p>
+        <p className="section-group-forecasts-by-day__message">
+          Loading forecasts...
+        </p>
       </section>
     );
   }
@@ -19,7 +21,9 @@ export default function SectionGroupForecastByHour() {
   if (loading === LoadingStates.ERROR) {
     return (
       <section className="section-group-forecasts-by-day">
-        <p className="section-group-forecasts-by-day__message">{error?.message}</p>
+        <p className="section-group-forecasts-by-day__message">
+          {error?.message}
+        </p>
       </section>
     );
   }
@@ -27,7 +31,7 @@ export default function SectionGroupForecastByHour() {
   return (
     <section className="section-group-forecasts-by-day">
       <h2 className="section-group-forecasts-by-day__title">Next Hours</h2>
-      <GroupForecastByHour weather={weather} />
+      <GroupForecastByHour weather={forecasts || null} />
     </section>
   );
 }

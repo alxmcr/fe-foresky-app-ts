@@ -1,10 +1,11 @@
 import React from 'react';
 import { LoadingStates } from '../../../@types/appTypes';
+import useForecastsNextDays from '../../../hooks/useForecastsNextDays';
 import { CityContext } from '../../../providers/CityContext';
 
 export default function SectionGroupForecastByNextDays() {
   const { nameCity } = React.useContext(CityContext);
-  const { weather, loading, error } = useWeather(nameCity);
+  const { forecasts, loading, error } = useForecastsNextDays(nameCity);
 
   if (loading === LoadingStates.PENDING) {
     return (
@@ -28,7 +29,8 @@ export default function SectionGroupForecastByNextDays() {
 
   return (
     <section className="section-group-forecasts-by-nextdays">
-      <h2 className="section-group-forecasts-by-nextdays__title">Next Hours</h2>
+      <h2 className="section-group-forecasts-by-nextdays__title">Next Days</h2>
+      {JSON.stringify(forecasts, null, 2)}
     </section>
   );
 }

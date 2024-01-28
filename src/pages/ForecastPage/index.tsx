@@ -1,5 +1,6 @@
-import SectionGroupForecastByHour from '../../components/sections/SectionGroupForecastByHour';
 import CardForecastToday from '../../components/cards/CardForecastToday';
+import SectionGroupForecastByHour from '../../components/sections/SectionGroupForecastByHour';
+import SectionGroupForecastByNextDays from '../../components/sections/SectionGroupForecastByNextDays';
 import './ForecastPage.scss';
 
 export default function ForecastPage() {
@@ -7,6 +8,7 @@ export default function ForecastPage() {
     <main className="forecast-page">
       <CardForecastToday />
       <SectionGroupForecastByHour />
+      <SectionGroupForecastByNextDays />
     </main>
   );
 }
