@@ -18,6 +18,10 @@
       color: #000;
     }
   }
+
+  &__message {
+    margin: 0;
+  }
 }
 
 @media (width > 450px) {

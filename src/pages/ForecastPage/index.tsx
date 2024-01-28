@@ -1,13 +1,13 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { LoadingStates } from '../../@types/appTypes';
 import CardForecastToday from '../../components/cards/CardForecastToday';
 import SectionGroupForecastByHour from '../../components/sections/SectionGroupForecastByHour';
 import SectionGroupForecastByWeek from '../../components/sections/SectionGroupForecastByWeek';
-import './ForecastPage.scss';
-import { HomeRoute } from '../../router/constants.routes';
-import React from 'react';
-import { CityContext } from '../../providers/CityContext';
 import useCurrentWeather from '../../hooks/useCurrentWeather';
-import { LoadingStates } from '../../@types/appTypes';
+import { CityContext } from '../../providers/CityContext';
+import { HomeRoute } from '../../router/constants.routes';
+import './ForecastPage.scss';
 
 export default function ForecastPage() {
   const { nameCity } = React.useContext(CityContext);
@@ -16,21 +16,21 @@ export default function ForecastPage() {
 
   if (loading === LoadingStates.PENDING) {
     return (
-      <article className="card-forecast-today">
-        <p className="card-forecast-today__message">Loading...</p>
-      </article>
+      <main className="forecast-page">
+        <p className="forecast-page__message">Loading...</p>
+      </main>
     );
   }
 
   if (loading === LoadingStates.ERROR && error !== null) {
     return (
-      <article className="card-forecast-today">
-        <p className="card-forecast-today__message">{error.message}</p>
+      <main className="forecast-page">
+        <p className="forecast-page__message">{error.message}</p>
 
         <NavLink to={HomeRoute.path} className="forecast-page__link">
           Return to home
         </NavLink>
-      </article>
+      </main>
     );
   }
 
