@@ -1,4 +1,4 @@
-# Shopdy app | Dockerfile
+# Foresky app | Dockerfile
 
 ## Build an image from a `Dockerfile`
 
