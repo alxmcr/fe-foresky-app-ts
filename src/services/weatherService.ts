@@ -2,7 +2,7 @@ export const getCurrentForecastByCity = async ({
   nameCity = '',
   hasAirQuality = 'no',
 }) => {
-  const APPID = import.meta.env.REACT_APP_API_KEY_WEATHER;
+  const APPID = import.meta.env.VITE_API_KEY_WEATHER;
   const SERVER_API = 'https://api.weatherapi.com/v1';
   const RESOURCE = 'current.json';
 

@@ -47,7 +47,7 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`REACT_APP_API_KEY_WEATHER`
+`VITE_API_KEY_WEATHER`
 
 You should put as value the API KEY that you got from [Weather's API](https://www.weatherapi.com/).
 
